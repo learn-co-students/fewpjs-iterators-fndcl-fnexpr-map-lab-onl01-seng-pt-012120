@@ -11,6 +11,14 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
-}
+const titleCased = tutorials.map(function(string) {
+
+  const sentence = string.split(" "); // Split the string into words that make up the sentence
+
+  for(var i = 0; i< sentence.length; i++) { // For each element in the new array of sentence words
+    sentence[i] = sentence[i][0].toUpperCase() + sentence[i].slice(1);  // Take the first character and make it caps -- no conflict with all cap words, we're just changing the first character
+  };
+
+sentence.join(" "); // Rejoin the words into a string with spaces
+return sentence; // Return the sentence, map will have array with each returned sentence inside it
+});
