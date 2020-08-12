@@ -14,19 +14,13 @@ const tutorials = [
 const titleCased = () => {
   let stringToWord = tutorials.map(tutorial => wordList(tutorial));
   let wordsToLetters = [];
-  let phraseArray = 0;
-  wordsToLetters[phraseArray] = [];
+  let i = 0;
+  wordsToLetters[i] = [];
   stringToWord.forEach(innerArray => {
-    wordsToLetters[phraseArray] = [];
-    let wordInPhrase = 0;
     innerArray.forEach(word => {
-      wordsToLetters[phraseArray][wordInPhrase] = letterList(word);
-      wordsToLetters[phraseArray][wordInPhrase][0] = wordsToLetters[phraseArray][wordInPhrase][0].toUpperCase();
-      wordsToLetters[phraseArray][wordInPhrase] = wordsToLetters[phraseArray][wordInPhrase].join('');
-      wordInPhrase += 1;
+      wordsToLetters[i] = letterList(word);
     });
-    wordsToLetters[phraseArray] = wordsToLetters[phraseArray].join(' ');
-    phraseArray += 1;
+    i += 1;
   });
   return wordsToLetters;
 }
@@ -38,7 +32,3 @@ let wordList = (string) => {
 let letterList = (word) => {
   return word.split('');
 }
-
-// let nestedPhrases = () => {
-
-// }
