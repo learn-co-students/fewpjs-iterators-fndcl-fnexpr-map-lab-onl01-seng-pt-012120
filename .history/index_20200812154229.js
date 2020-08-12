@@ -12,6 +12,18 @@ const tutorials = [
 ];
 
 const titleCased = () => {
+  nestedPhrases();
+}
+
+let wordList = (string) => {
+  return string.split(' ');
+}
+
+let letterList = (word) => {
+  return word.split('');
+}
+
+let nestedPhrases = () => {
   let stringToWord = tutorials.map(tutorial => wordList(tutorial));
   let wordsToLetters = [];
   let phraseArray = 0;
@@ -30,15 +42,3 @@ const titleCased = () => {
   });
   return wordsToLetters;
 }
-
-let wordList = (string) => {
-  return string.split(' ');
-}
-
-let letterList = (word) => {
-  return word.split('');
-}
-
-// let nestedPhrases = () => {
-
-// }
